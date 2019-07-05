@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 // components
 import SearchFormView from './SearchFormView';
 
-const SearchFormContainer = () => {
-  return (
-    <div>
-      <SearchFormView />
-    </div>
-  );
-};
-
-export default SearchFormContainer;
+export default class SearchFormContainer extends Component {
+  render() {
+    return (
+      <div>
+        <SearchFormView onSubmit={this.handleSubmit} />
+      </div>
+    );
+  }
+}
