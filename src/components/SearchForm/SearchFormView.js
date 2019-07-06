@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 // styles
 import styles from './SearchForm.module.css';
 
-const SearchFormView = ({ onSubmit }) => {
+const SearchFormView = ({ onSubmit, inputValue, handleChangeInput }) => {
   return (
     <div className={styles.container}>
       <form className={styles.form} onSubmit={onSubmit}>
@@ -11,7 +11,9 @@ const SearchFormView = ({ onSubmit }) => {
           type="text"
           className={styles.input}
           placeholder="Enter username in GitHub..."
+          value={inputValue}
           required
+          onChange={handleChangeInput}
         />
         <button type="submit" className={styles.btn}>
           Get repositories
