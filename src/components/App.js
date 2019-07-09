@@ -1,12 +1,9 @@
-/* eslint camelcase: 0 */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import queryString from 'query-string';
-
 import API from '../services/api';
-
-// styles
-import styles from './App.module.css';
+import SearchInput from './SearchInput/SearchInput';
+import ReposList from './ReposList/ReposList';
 
 class App extends Component {
   state = { username: '', repos: [] };
@@ -49,32 +46,14 @@ class App extends Component {
 
   render() {
     const { repos, username } = this.state;
-
     return (
       <div>
-        <form className={styles.form} onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            className={styles.input}
-            placeholder="Enter username in GitHub..."
-            value={username}
-            required
-            onChange={this.handleChangeInput}
-          />
-          <button type="submit" className={styles.btn}>
-            Get repositories
-          </button>
-        </form>
-        {repos.length > 0 && (
-          <ul className={styles.list}>
-            {repos.map(({ id, html_url, description }) => (
-              <li key={id} className={styles.item}>
-                <a href={html_url}>{html_url}</a>
-                <p>{description}</p>
-              </li>
-            ))}
-          </ul>
-        )}
+        <SearchInput
+          username={username}
+          onSubmit={this.handleSubmit}
+          onChange={this.handleChangeInput}
+        />
+        {repos.length > 0 && <ReposList repos={repos} />}
       </div>
     );
   }

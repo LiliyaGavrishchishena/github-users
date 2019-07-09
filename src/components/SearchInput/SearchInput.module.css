@@ -40,14 +40,3 @@
 .btn:hover {
   background-color: #1bc5b1;
 }
-
-.list {
-  font-size: 18px;
-  display: flex;
-  flex-direction: column;
-}
-
-.item {
-  border: 1px solid #1bc5b1;
-  padding: 10px;
-}

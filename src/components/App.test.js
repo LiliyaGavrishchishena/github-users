@@ -1,11 +1,16 @@
 import React from 'react';
-import { shallow, configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import { shallow } from 'enzyme';
+import toJson from 'enzyme-to-json';
+
 import App from './App';
 
-configure({ adapter: new Adapter() });
 describe('First React component test with Enzyme', () => {
+  const wrapper = shallow(<App />);
   it('renders without crashing', () => {
-    shallow(<App />);
+    console.log(wrapper.debug());
+  });
+  it('matches the snapshot', () => {
+    const tree = shallow(<App />);
+    expect(toJson(tree)).toMatchSnapshot();
   });
 });
