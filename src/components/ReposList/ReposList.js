@@ -9,7 +9,10 @@ const ReposList = ({ repos = [] }) => {
       {repos.map(({ id, html_url, description }) => (
         <li key={id} className={styles.item}>
           <a href={html_url}>{html_url}</a>
-          <p>{description}</p>
+          <p>
+            {description}
+            {html_url}
+          </p>
         </li>
       ))}
     </ul>

@@ -4,13 +4,12 @@ import toJson from 'enzyme-to-json';
 
 import App from './App';
 
-describe('First React component test with Enzyme', () => {
+describe('App', () => {
   const wrapper = shallow(<App />);
   it('renders without crashing', () => {
     console.log(wrapper.debug());
   });
   it('matches the snapshot', () => {
-    const tree = shallow(<App />);
-    expect(toJson(tree)).toMatchSnapshot();
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

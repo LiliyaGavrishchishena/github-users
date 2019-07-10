@@ -50,8 +50,8 @@ class App extends Component {
       <div>
         <SearchInput
           username={username}
-          onSubmit={this.handleSubmit}
           onChange={this.handleChangeInput}
+          onSubmit={this.handleSubmit}
         />
         {repos.length > 0 && <ReposList repos={repos} />}
       </div>

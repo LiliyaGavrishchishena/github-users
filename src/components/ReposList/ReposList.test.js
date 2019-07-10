@@ -11,4 +11,7 @@ describe('ReposList', () => {
   it('ul should has class .list', () => {
     expect(wrapper.find('ul').hasClass('list')).toBe(true);
   });
+  it('it has ul', () => {
+    expect(wrapper.find('ul')).toHaveLength(1);
+  });
 });

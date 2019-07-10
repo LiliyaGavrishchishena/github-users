@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 // styles
 import styles from './SearchInput.module.css';
 
@@ -21,12 +20,6 @@ const SearchInput = ({ username, onSubmit, onChange }) => {
       </form>
     </div>
   );
-};
-
-SearchInput.propTypes = {
-  username: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
 };
 
 export default SearchInput;
